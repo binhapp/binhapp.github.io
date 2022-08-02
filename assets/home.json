@@ -1,0 +1,18 @@
+{
+  "banner": [
+    {
+      "image": "https://prodstore01.blob.core.windows.net/mobile/home_header_1.png",
+      "projectId": "123"
+    },
+    {
+      "image": "https://prodstore01.blob.core.windows.net/mobile/home_header_1.png",
+      "projectId": "456"
+    }
+  ],
+  "b2c": [
+    {
+      "image": "https://prodstore01.blob.core.windows.net/mobile/home_header_1.png",
+      "projectId": "456"
+    }
+  ]
+}
