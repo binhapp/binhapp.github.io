@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<p id="demo">Date</p>
-
-<script>
-const d = new Date();
-document.getElementById("demo").innerHTML = d;
-</script>
-
-</body>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44602877-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-44602877-3');
+    </script>
+    <!-- End -->
+  </head>
+  <body>
+    <p id="id2">Date</p>
+    <script>
+      const d = new Date();
+      document.getElementById("id2").innerHTML = d;
+    </script>
+  </body>
 </html>
-
