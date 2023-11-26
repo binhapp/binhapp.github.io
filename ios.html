@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS 9 Lockscreen</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('your-background-image.jpg') center/cover no-repeat; /* Thay đổi đường dẫn hình ảnh của bạn */
+            color: #fff;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        #lockscreen {
+            position: relative;
+            width: 320px; /* Chiều rộng của iPhone 5s ở chế độ hình dung */
+            height: 568px; /* Chiều cao của iPhone 5s ở chế độ hình dung */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Để tăng độ trong suốt cho văn bản */
+        }
+
+        #time {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #date {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #unlock-text {
+            font-size: 16px;
+            color: #8e8e93;
+            position: absolute;
+            bottom: 70px; /* Điều chỉnh khoảng cách bên dưới theo nhu cầu */
+            left: 0;
+            right: 0;
+        }
+
+        #slider {
+            position: absolute;
+            bottom: 20px; /* Điều chỉnh khoảng cách bên dưới theo nhu cầu */
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to right, #4e4e4e, #8e8e8e);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease-out;
+        }
+
+        #slider:hover {
+            background: linear-gradient(to right, #8e8e8e, #b4b4b4);
+        }
+
+        #slider:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="lockscreen">
+        <div id="time">9:41</div>
+        <div id="date">Wednesday, September 14</div>
+        <div id="unlock-text">Slide to unlock</div>
+        <div id="slider"></div>
+    </div>
+</body>
+</html>
