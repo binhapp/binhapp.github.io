@@ -11,19 +11,34 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+      :root {
+        --text: #000;
+        --bg: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: #fff;
+          --bg: #000;
+        }
+      }
+      body {
+        font-family: monospace;
+        background-color: var(--bg);
+        color: var(--text);
+      }
+      a {
+        color: var(--text);
+        text-decoration: none;
+        margin-right: 8px;
+      }
+      i {
+        font-size: 24px;
+      }
       .center {
         position: fixed;
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-      }
-      body {
-        font-family: monospace;
-      }
-      a {
-        color: #000000;
-        text-decoration: none;
-        margin-right: 8px;
       }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -34,19 +49,19 @@
       <h2 style="text-align: center">(blcsntb)</h2>
       <center>
         <a target="_blank" href="https://github.com/binhapp">
-          <i class="fa-brands fa-github" style="font-size:24px"></i>
+          <i class="fa-brands fa-github"></i>
         </a>
         <a target="_blank" href="https://www.linkedin.com/in/binhapp">
-          <i class="fa-brands fa-linkedin" style="font-size:24px"></i>
+          <i class="fa-brands fa-linkedin"></i>
         </a>
         <a target="_blank" href="https://x.com/blcsntb">
-          <i class="fa-brands fa-x-twitter" style="font-size:24px"></i>
+          <i class="fa-brands fa-x-twitter"></i>
         </a>
         <a target="_blank" href="https://www.facebook.com/blcsntb">
-          <i class="fa-brands fa-facebook" style="font-size:24px"></i>
+          <i class="fa-brands fa-facebook"></i>
         </a>
         <a target="_blank" href="https://binhapp.gitbook.io">
-          <i class="fa-solid fa-user fa-bounce" style="font-size:24px"></i>
+          <i class="fa-solid fa-user fa-bounce"></i>
         </a>
       </center>
     </div>
