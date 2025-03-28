@@ -1,2 +1,2 @@
 
-- https://news.ycombinator.com
+1. <https://news.ycombinator.com>
