@@ -18,9 +18,7 @@
     <script>
       // Function to call the bridge with the required format
       function callBridge(screen, symbol, orderType) {
-        const code = 'MoneyStation';
-
-        const message = JSON.stringify({ code, screen, symbol, orderType });
+        const message = `${screen};${symbol};${orderType}`;
         console.log('callBridge:', message);
 
         if (window.ReactNativeWebView) {
