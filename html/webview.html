@@ -1,9 +1,9 @@
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <h1>WebView Bridge Test Page</h1>
+    <h1>WebView Bridge Test Page2</h1>
 
     <div>
       <label for="symbol">Symbol:</label>
@@ -22,8 +22,8 @@
         const message = `${screen} ; ${symbol} ; ${orderType}`;
         // For demonstration, we'll log it and also try to call window.bridge if available
         console.log('callBridge:', message);
-        if (window.bridge && typeof window.bridge.postMessage === 'function') {
-          window.bridge.postMessage(message);
+        if (window.ReactNativeWebView) {
+          window.ReactNativeWebView.postMessage(message);
         } else {
           alert('Bridge message: ' + message);
         }
