@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <h1>WebView Bridge Test Page2</h1>
+    <h1>WebView Bridge Test Page3</h1>
 
     <div>
       <label for="symbol">Symbol:</label>
@@ -18,10 +18,9 @@
     <script>
       // Function to call the bridge with the required format
       function callBridge(screen, symbol, orderType) {
-        // Format: 'screen ; symbol ; orderType'
-        const message = `${screen} ; ${symbol} ; ${orderType}`;
-        // For demonstration, we'll log it and also try to call window.bridge if available
-        console.log('callBridge:', message);
+        const message = JSON.stringify({ screen, symbol, orderType });
+        console.log('callBridge:', message, window);
+
         if (window.ReactNativeWebView) {
           window.ReactNativeWebView.postMessage(message);
         } else {
