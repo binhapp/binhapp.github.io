@@ -1,0 +1,49 @@
+<html>
+  <body>
+    <h1>WebView Bridge Test Page</h1>
+
+    <div>
+      <label for="symbol">Symbol:</label>
+      <input type="text" id="symbol" value="ACB" />
+    </div>
+    <div>
+      <button id="quotationBtn">Go to Quotation</button>
+      <button id="buyOrderBtn">Go to Buy Order</button>
+      <button id="sellOrderBtn">Go to Sell Order</button>
+    </div>
+
+    <script>
+      // Function to call the bridge with the required format
+      function callBridge(screen, symbol, orderType) {
+        // Format: 'screen ; symbol ; orderType'
+        const message = `${screen} ; ${symbol} ; ${orderType}`;
+        // For demonstration, we'll log it and also try to call window.bridge if available
+        console.log('callBridge:', message);
+        if (window.bridge && typeof window.bridge.postMessage === 'function') {
+          window.bridge.postMessage(message);
+        } else {
+          alert('Bridge message: ' + message);
+        }
+      }
+
+      // Test page logic
+      document.getElementById('quotationBtn').addEventListener('click', function () {
+        const symbol = document.getElementById('symbol').value;
+        // screen: 0 (Quotation), orderType: - (not used)
+        callBridge(0, symbol, '');
+      });
+
+      document.getElementById('buyOrderBtn').addEventListener('click', function () {
+        const symbol = document.getElementById('symbol').value;
+        // screen: 1 (Order), orderType: 0 (buy)
+        callBridge(1, symbol, 0);
+      });
+
+      document.getElementById('sellOrderBtn').addEventListener('click', function () {
+        const symbol = document.getElementById('symbol').value;
+        // screen: 1 (Order), orderType: 1 (sell)
+        callBridge(1, symbol, 1);
+      });
+    </script>
+  </body>
+</html>
